@@ -14,8 +14,13 @@ $factory->define(InstitutionLevel::class, function (Faker $faker) {
         'level_id' => function () {
             return Level::all()->random();
         },
-        'category_level_institution_id' => function () {
-            return CategoryLevelInstitution::all()->random();
-        },
+        'type_partnership'=>function(){
+        return collect([
+            'Partenaires financiers',
+            'Partenaires au Development',
+            'Partenaires cooperation decentralisé',
+            'autres',
+        ])->random();
+        }
     ];
 });

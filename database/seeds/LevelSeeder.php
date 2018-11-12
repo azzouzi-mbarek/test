@@ -37,7 +37,7 @@ class LevelSeeder extends Seeder
 
     public function run(Faker $faker)
     {
-        for ($i = 0; $i < 6 ; $i++) {
+        for ($i = 0; $i < 100 ; $i++) {
 
             $tab = $this->getIdsLevel1() ;
 
@@ -57,7 +57,7 @@ class LevelSeeder extends Seeder
 
 
 
-        for ($i = 0; $i < 9; $i++) {
+        for ($i = 0; $i < 100; $i++) {
 
             $tab = $this->getIdsLevel2();
 

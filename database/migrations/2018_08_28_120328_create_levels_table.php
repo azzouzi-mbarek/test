@@ -25,6 +25,8 @@ class CreateLevelsTable extends Migration
             $table->string('email')->nullable();
             $table->string('number_phone')->nullable();
             $table->string('address')->nullable();
+            $table->integer('population')->nullable();
+            $table->integer('census_date_population')->nullable();
             $table->timestamps();
         });
         Schema::table('levels', function (Blueprint $table) {

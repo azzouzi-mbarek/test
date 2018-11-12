@@ -23,7 +23,7 @@ $factory->define(LevelPerson::class, function (Faker $faker) {
                 'Adjoint Maire',
                 'President de conseil ',
                 'Vice President de conseil ',
-                ' Membre de conseil ',
+                'Membre de conseil',
             ])->random();
         },
         'status' => function () {

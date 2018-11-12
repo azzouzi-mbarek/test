@@ -30,6 +30,6 @@ $factory->define(CountryPerson::class, function (Faker $faker) {
             ])->random();
         },
         'start_date'=> $faker->date($format = 'Y-m-d', $max = 'now'),
-        'end_date'=> $faker->date($format = 'Y-m-d', $max = 'now'),
+        'end_date'=> $faker->date($format = 'Y-m-d', $min = 'now'),
     ];
 });

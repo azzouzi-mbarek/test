@@ -22,8 +22,6 @@ class InstitutionCollection extends JsonResource
         return [
             'id'=>$this->id,
             'name'=> $this->name,
-            'type'=> CategoryInstitution::find($this->category_institution_id)->name,
-            'category_partenariat'=> CategoryLevelInstitution::find($this->pivot->category_level_institution_id)->name,
             'level_id' => $this->pivot->level_id,
             'country_id' => Level::find($this->pivot->level_id)->country->id,
             'region_id' => Country::find(Level::find($this->pivot->level_id)->country_id)->region_id,

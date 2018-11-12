@@ -17,13 +17,12 @@ class CreateInstitutionLevelTable extends Migration
             $table->increments('id');
             $table->integer('institution_id')->unsigned()->index();
             $table->integer('level_id')->unsigned()->index();
-            $table->integer('category_level_institution_id')->unsigned()->index();
+            $table->string('type_partnership')->nullable();
             $table->timestamps();
         });
         Schema::table('institution_level', function (Blueprint $table) {
             $table->foreign('institution_id')->references('id')->on('institutions')->onDelete('cascade');
             $table->foreign('level_id')->references('id')->on('levels')->onDelete('cascade');
-            $table->foreign('category_level_institution_id')->references('id')->on('category_level_institutions')->onDelete('cascade');
         });
     }
 

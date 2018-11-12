@@ -18,7 +18,7 @@ class RegionCollection extends Resource
         return [
             'id' => $this->id,
             'name' => $this->name,
-            'area' => Geometry::fromWKB($this->area)->toJson(),
+//            'area' => Geometry::fromWKB($this->area)->toJson(),
             'href' => [
                 'link' => route('regions.show', $this->id)
             ]

@@ -14,10 +14,10 @@ class DatabaseSeeder extends Seeder
         // $this->call(UsersTableSeeder::class);
         factory(App\Models\User::class, 1)->create();
 
-         factory(App\Models\Region::class, 2)->create();
-         factory(App\Models\Country::class, 2)->create();
-         factory(App\Models\Level\CategoryLevel::class, 10)->create();
-         factory(App\Models\Level\Level::class, 5)->create();
+         factory(App\Models\Region::class, 5)->create();
+         factory(App\Models\Country::class, 54)->create();
+         factory(App\Models\Level\CategoryLevel::class, 37)->create();
+         factory(App\Models\Level\Level::class, 100)->create();
          $this->call(LevelSeeder::class);
         //   factory(App\Models\Level\Population::class, 20)->create();
         // factory(App\Models\Level\LegalFramework::class, 20)->create();
@@ -26,13 +26,13 @@ class DatabaseSeeder extends Seeder
         // factory(App\Models\Level\Evenement::class, 100)->create();
         // factory(App\Models\Level\Programme::class, 100)->create();
          factory(App\Models\Person\CategoryPerson::class, 50)->create();
-         factory(App\Models\Person\Person::class, 50)->create();
-         factory(App\Models\Person\LevelPerson::class, 50)->create();
+         factory(App\Models\Person\Person::class, 1000)->create();
+         factory(App\Models\Person\LevelPerson::class, 300)->create();
         // factory(App\Models\Person\CategoryPerson::class, 50)->create();
         // factory(App\Models\Institution\CategoryInstitution::class, 10)->create();
-        // factory(App\Models\Institution\Institution::class, 50)->create();
+         factory(App\Models\Institution\Institution::class, 100)->create();
         // factory(App\Models\Level\CategoryLevelInstitution::class, 4)->create();
-        // factory(App\Models\Level\InstitutionLevel::class, 100)->create();
+         factory(App\Models\Level\InstitutionLevel::class, 500)->create();
         // factory(App\Models\Indicator\CategoryIndicator::class, 20)->create();
         // factory(App\Models\Indicator\Indicator::class, 100)->create();
         // factory(App\Models\Indicator\IndicatorLevel::class, 100)->create();

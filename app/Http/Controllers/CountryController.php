@@ -21,6 +21,7 @@ class CountryController extends Controller
     {
         $countries = Country::all();
         return CountryCollection::collection($countries);
+
     }
 
     /**

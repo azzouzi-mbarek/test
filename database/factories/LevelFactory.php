@@ -21,6 +21,8 @@ $factory->define(App\Models\Level\Level::class, function (Faker $faker) {
         'email' => $faker->companyEmail,
         'number_phone' => $faker->phoneNumber,
         'address' => $faker->address,
+        'population' => $faker->numberBetween($min = 40000, $max = 6000000),
+        'census_date_population' => $faker->year($max = 'now') ,
 
     ];
 });

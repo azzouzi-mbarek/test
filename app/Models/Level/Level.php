@@ -74,7 +74,7 @@ class Level extends Model
     public function Institutions()
     {
         return $this->belongsToMany(Institution::class)
-            ->withPivot('category_level_institution_id', 'level_id', 'institution_id');
+            ->withPivot( 'level_id', 'institution_id');
     }
     public function Indicators()
     {

@@ -25,7 +25,8 @@ class PersonCollection extends JsonResource
             'first_name' => $this->first_name,
 ////            'category_person' => CategoryPerson::find(LevelPerson::find($this->id)->category_person_id)->name,
             'level_id' => $this->pivot->level_id,
-//            'created_at' => $this->pivot->created_at,
+            'created_at' => $this->pivot->created_at,
+            'academic_level'=>$this->academic_level,
 //            'country_id' => Level::find($this->pivot->level_id)->country->id,
 //            'profile' => [
 //                'link' => (function () {

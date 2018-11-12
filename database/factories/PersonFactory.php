@@ -15,7 +15,7 @@ $factory->define(App\Models\Person\Person::class, function (Faker $faker) {
         'last_name'=>$faker->lastName,
         'birthday'=>$faker->date($format = 'Y-m-d', $max = 'now'),
         'nationality'=>$faker->country,
-        'academic_level'=>'bac+..',
+        'academic_level'=>'bac+'.$faker->numberBetween($min = 0, $max = 8),
         'study_area'=>$faker->jobTitle,
         'short_biography'=>$faker->text,
         'email'=>$faker->email,

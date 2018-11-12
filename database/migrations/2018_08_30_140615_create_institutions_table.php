@@ -21,17 +21,14 @@ class CreateInstitutionsTable extends Migration
             $table->longText('description');
             $table->year('foundation_year');
             $table->string('country_seat');
+            $table->string('category_institution');
             $table->string('areas_intervention');
             $table->string('target_beneficiary');
             $table->string('web_site');
             $table->string('email');
             $table->string('number_phone');
             $table->string('address');
-            $table->integer('category_institution_id')->unsigned()->index();
             $table->timestamps();
-        });
-        Schema::table('institutions', function (Blueprint $table) {
-            $table->foreign('category_institution_id')->references('id')->on('category_institutions');
         });
     }
 

@@ -16,7 +16,7 @@ class InstitutionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($region_id, $country_id, Level $level)
+    public function index($country_id, Level $level)
     {
 
         return InstitutionCollection::collection($level->Institutions);
@@ -39,13 +39,13 @@ class InstitutionController extends Controller
      * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store($region, $country, Level $level, InstitutionRequest $request)
+    public function store($country, Level $level, InstitutionRequest $request)
     {
         $institution = new Institution($request->all());
         $institution->save();
         if ($institution->save()) {
             //        $level->Persons()->save($person);
-            $level->Institutions()->attach($institution->id, ['category_level_institution_id' => $request->category_level_institution_id]);
+            $level->Institutions()->attach($institution->id);
         }
         return response([
             'data' => new InstitutionResource($institution),
@@ -85,11 +85,11 @@ class InstitutionController extends Controller
      * @param  \App\Models\Institution\Institution $institution
      * @return \Illuminate\Http\Response
      */
-    public function update($region, $country, Level $level, Institution $institution, Request $request)
+    public function update($country, Level $level, Institution $institution, Request $request)
     {
         $institution->update($request->all());
         if ($institution->update()) {
-            $level->Institutions()->updateExistingPivot($institution->id, ['category_level_institution_id' => $request->category_level_institution_id]);
+            $level->Institutions()->updateExistingPivot($institution->id);
         }
         return response([
             'data' => new InstitutionResource($institution)
@@ -103,7 +103,7 @@ class InstitutionController extends Controller
      * @param  \App\Models\Institution\Institution $institution
      * @return \Illuminate\Http\Response
      */
-    public function destroy($region, $country, Level $level, Institution $institution)
+    public function destroy($country, Level $level, Institution $institution)
     {
         $institution->delete();
         return response(null, 204);

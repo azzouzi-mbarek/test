@@ -28,6 +28,7 @@ Route::group([
         Route::group(['prefix' => '/{country}/levels'], function () {
             Route::apiResource('/{level}/population', 'PopulationController');
             Route::apiResource('/{level}/persons', 'PersonController');
+            Route::apiResource('/{level}/institutions', 'InstitutionController');
         });
 
     });
